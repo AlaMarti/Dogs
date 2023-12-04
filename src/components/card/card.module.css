@@ -1,0 +1,119 @@
+.Contenedor {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px; /* Aumenta el valor para más perspectiva 3D */
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    margin: 30px;
+    justify-content: center;
+    
+  }
+  
+  .Front,
+  .Back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .Front {
+    border: solid 3px rgb(197, 128, 0);
+    border-radius: 10px;
+    opacity: 3;
+    transition: opacity 0.3s ease;
+
+  }
+
+  .Front h2 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-variant:small-caps;
+
+  }
+
+  .Front:hover{
+    opacity: 0.6;
+  }
+  
+  .Back {
+    background-color:  rgb(197, 128, 0);
+    border-radius: 10px;
+    border: solid 3px white;
+    transform: rotateY(180deg);
+  }
+
+  .Back p {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-variant:small-caps;
+    font-size: 30px;
+    border: solid 2px white;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    color: white;
+    transition: transform 0.5s;
+
+  }
+
+  .Back p {
+    transition: opacity 0.3s ease;
+  
+  }
+
+  .Back p:hover {
+    opacity: 0.6;
+
+  
+  }
+
+  .Back a   {
+    text-decoration: none;
+  }
+
+  .Back h2 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-variant:small-caps;
+
+  }
+
+  .Back li {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-variant:small-caps;
+    margin-bottom: 15px;
+  }
+
+  .Detalles {
+    border: solid 2px white;
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+  }
+
+  .Detalles:hover{
+    background-color:  rgb(235, 245, 241);
+  }
+  
+  .Contenedor.Flipped {
+    transform: rotateY(180deg);
+  }
+  
+
+  .imagen{
+    width: 100%;
+
+  }
+
+  .imagen img {
+    border-radius: 15px;
+    width: 50%;
+    max-width: 600px;
+    margin-bottom: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }

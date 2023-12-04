@@ -1,0 +1,9 @@
+.Contenedor{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 20px;
+    align-items: center;
+    flex-wrap:wrap;
+    
+}

@@ -1,0 +1,7 @@
+.Contenedor{
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    height: 90vh;
+    background-color: rgb(235, 245, 241);
+}

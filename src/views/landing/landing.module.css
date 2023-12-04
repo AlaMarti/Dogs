@@ -1,0 +1,73 @@
+.landingCont{
+    max-width: 100%;
+    background-image: url('../../assets/pexels-photo-406014.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.landingCont input {
+    padding: 10px 20px;
+    width: 300px;
+    height: 100px;
+    background-color: rgb(228, 159, 29);
+    border: solid 1px rgb(197, 128, 0);
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-variant:small-caps;
+    transition: background-color 0.30s ease;
+    border-radius: 20px;
+}
+
+.landingCont input:hover {
+    background-color: #FFA500; 
+}
+
+
+/* .customSlider{
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+} */
+
+/* .slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+
+
+.slick-dots {
+    bottom: 10px;
+  }
+  
+  .slick-dots li {
+    margin: 0 10px;
+
+  } */
+
+
+
+
+
+.ImageFondo img{
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
