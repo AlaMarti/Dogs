@@ -50,7 +50,7 @@ const Searchbar = () => {
 
 
 
-      setSearchResults(dogs);
+    setSearchResults(dogs);
 
     } catch (error) {
 
@@ -72,11 +72,27 @@ const Searchbar = () => {
     setShowResults(false); // Ocultar la lista de resultados cuando se hace clic en un país
   };
 
-  return (
-    <div>
-      <input type="text" className={styles.barraNav} placeholder='Buscar' onChange={handleChangeSearch}/>
+  
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      setShowResults(false); // Ocultar la lista de resultados al presionar "Escape"
+    }
+  };
 
-      {showResults && searchResults.length > 0 && (
+  return (
+
+
+    <div className={styles.searchBar}>
+      <input
+        className={styles.inputSearchBar}
+        placeholder="Search dogs"
+        type="search"
+        onChange={handleChangeSearch}
+        value={name}
+        onKeyDown={handleKeyDown} // Escuchar el evento "onKeyDown" para la tecla "Escape"
+      />
+
+      {showResults && searchResults && searchResults.length > 0 && (
         <div className={styles.resultsContainer} ref={resultsRef}>
           <ul className={styles.resultsList}>
             {searchResults.map((dog) => (
@@ -89,13 +105,14 @@ const Searchbar = () => {
                   src={dog.image} // Supongamos que la propiedad para la imagen es "flag"
                   className={styles.flagImage}
                 />
-                <span className={styles.dogName}>{dog.name}</span>
+                <span className={styles.countryName}>{dog.name}</span>
               </li>
             ))}
           </ul>
         </div>
       )}
     </div>
+
   )
 }
 
