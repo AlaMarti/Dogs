@@ -1,5 +1,5 @@
 import axios from "axios"
-import { GET_DOGS } from "./Actions-Types"
+import { GET_DOGS, PAGINATE } from "./Actions-Types"
 
 export function getDog(state){
     return async function (dispatch){
@@ -11,5 +11,15 @@ export function getDog(state){
             console.log(error)
         }
 
+    }
+}
+
+
+export function page(order) {
+    return function (dispatch){
+        dispatch({
+            type: PAGINATE,
+            payload: order 
+        })
     }
 }
