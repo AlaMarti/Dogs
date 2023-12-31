@@ -16,6 +16,7 @@ export function getDog(state){
 
 
 export function page(order) {
+    console.log("Soy order", order)
     return function (dispatch){
         dispatch({
             type: PAGINATE,

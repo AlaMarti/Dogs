@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
 
-const Card = ({ id, name, image, breed_group, temperament }) => {
+const Card = ({ name, image, breed_group, temperament, id }) => {
+  console.log("Soy el id",  id)
   const [flipped, setFlipped] = useState(false);
   const handleClick = () => {
     setFlipped(!flipped)
@@ -12,7 +13,9 @@ const Card = ({ id, name, image, breed_group, temperament }) => {
 
   return (
 
+  
     <div className={`${style.Contenedor} ${flipped ? style.Flipped : ''}`} onClick={handleClick}>
+      
       <div className={style.Front}>
         <h2>{name}</h2>
 
@@ -20,6 +23,7 @@ const Card = ({ id, name, image, breed_group, temperament }) => {
           <img src={image} alt="dog" width='100%' />
         </div>
       </div>
+      
 
 
       <div className={style.Back}>

@@ -8,13 +8,14 @@ const Details = () => {
 
   const { id } = useParams();
 
-  console.log(id)
   const [dog, setDogs] = useState({})
 
   useEffect(() => {
     axios(`http://localhost:3001/dog/${id}`).then(({ data }) => {
 
-      if (data[0].id) {
+    console.log(data.id)
+
+      if (data[0].id || data.id) {
         setDogs(data[0]);
 
       } else {
@@ -24,7 +25,7 @@ const Details = () => {
     return setDogs({});
   }, [id]);
 
-  console.log("Soy dog", dog)
+
 
   return (
     <div className={style.Contenedor}>

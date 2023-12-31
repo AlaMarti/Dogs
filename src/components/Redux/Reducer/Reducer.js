@@ -9,6 +9,8 @@ let initialState ={
 }
 
 function rootReducer(state = initialState, action ){
+
+    console.log( action)
     const ITEMS_PERPAGE = 8
 
     switch(action.type){
@@ -36,7 +38,6 @@ function rootReducer(state = initialState, action ){
         
 
         default: return state
-            break
         
     }
 
