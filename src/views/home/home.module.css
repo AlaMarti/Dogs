@@ -6,32 +6,12 @@
     background-color: rgb(235, 245, 241);
 }
 
-.BotonCurrent{
-    background-color: #0074e4;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    padding: 8px 15px;
-    margin: 0 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.ContPag{
+    background-color:  rgb(235, 245, 241);
+    justify-content: center;
+    width: 100%;
 }
 
-
-
-.Botones{
-    text-decoration: none;
-    color: #0074e4;
-    background-color: #fff;
-    border: 1px solid #0074e4;
-    border-radius: 5px;
-    padding: 8px 15px;
-    margin: 0 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-
-
-.Botones:hover {
-    background-color: #0074e4;
-    color: #fff;
+.ContPag button{
+    margin-bottom: 15px;
 }

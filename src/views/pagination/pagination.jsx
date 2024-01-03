@@ -1,32 +1,43 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import style from './pagination.module.css'
+import { page } from '../../components/Redux/Action/Action'
 
-const Pagination = ({dogsPerPage, currentPage, setcurrentPage, info}) => {
 
-    const pageNum = [];
+const Pagination = () => {
 
-    console.log(currentPage)
+    const array = []
+    const dispatch = useDispatch()
+    const numpage = useSelector(state => state.numpage)
+    const currentPage = useSelector(state => state.currentPage)
 
-    console.log(info.length/dogsPerPage)
 
-    // for(let i = 1; )
+    for (let i = 0; i < numpage; i++) {
+        array.push(i)
+
+    }
+
+    const pagination = (event) => {
+        dispatch(page(event.target.name))
+
+    }
+
 
     return (
 
-        <nav>
-            <a href="">Previous</a>
-            <a href="">Next</a>
+        <div>
+            <div className={style.Paginado}>
 
-            <ul>
-                <li>
-                    <a href="">1</a>
-                </li>
-                <li>
-                    <a href="">46</a>
-                </li>
-            </ul>
+                <button name='prev' onClick={pagination}> {"<<"} </button>
+                {array.map((a) => (<button className={currentPage == a ? style.BotonCurrent : style.Botones} name={a} key={a} onClick={pagination}> {a + 1} </button>))}
 
-        </nav>
+                {console.log("soy current", currentPage)}
+                {console.log(array)}
+                <button name='next' onClick={pagination}> {">>"} </button>
+            </div>
 
+
+        </div>
 
 
     )
