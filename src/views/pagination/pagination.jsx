@@ -1,10 +1,12 @@
 import React from 'react'
 
-const Pagination = (dogsPerPage, currentPage, setcurrentPage, totalDogs) => {
+const Pagination = ({dogsPerPage, currentPage, setcurrentPage, info}) => {
 
     const pageNum = [];
 
-    console.log(totalDogs)
+    console.log(currentPage)
+
+    console.log(info.length/dogsPerPage)
 
     // for(let i = 1; )
 
