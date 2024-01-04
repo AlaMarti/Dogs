@@ -1,5 +1,5 @@
 .BotonCurrent{
-    background-color: #0074e4;
+    background-color:  rgb(185, 205, 201);
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -12,9 +12,11 @@
 
 .Botones{
     text-decoration: none;
-    color: #0074e4;
-    background-color: #fff;
-    border: 1px solid #0074e4;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-variant:small-caps;
+    color: black;
+    background-color:  rgb(235, 245, 241);
+    border: 2px solid rgb(185, 205, 201);
     border-radius: 5px;
     padding: 8px 15px;
     margin: 0 5px;
@@ -24,19 +26,20 @@
 
 
 .Botones:hover {
-    background-color: #0074e4;
+    background-color:  rgb(228, 159, 29);
     color: #fff;
 }
 
 .Paginado{
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    padding: 15px;
+
 }
 
 
 .Paginado.active {
-    background-color: #0074e4;
+    background-color: rgb(228, 159, 29);
     color: #fff;
     cursor: default;
 }

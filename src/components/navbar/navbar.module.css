@@ -23,16 +23,13 @@
     /* Estilos para los enlaces dentro del contenedor */
     margin-right: 10px; /* Puedes ajustar este valor según sea necesario */
     text-decoration: none; /* Elimina la subrayado predeterminada de los enlaces */
-    /* color: rgb(181, 172, 172);  */
-    color: white;
-    background-color: rgb(228, 159, 29);
+    color: black;
+    background-color:  rgb(235, 245, 241);
     cursor: pointer;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-variant:small-caps;
     font-size: 25px;
     margin: 20px;
-    /* border: solid 2px  rgb(181, 172, 172); */
-    border: solid 1px rgb(197, 128, 0);
     border-radius: 10px;
     padding: 5px;
   }
@@ -41,26 +38,34 @@
     /* Estilos para los enlaces dentro del contenedor */
     margin-right: 10px; /* Puedes ajustar este valor según sea necesario */
     text-decoration: none; /* Elimina la subrayado predeterminada de los enlaces */
-    color: white;
-    background-color: rgb(228, 159, 29);
-
-     /* Color del texto para los enlaces */
+    color: black;
+    background-color:  rgb(235, 245, 241);
     cursor: pointer;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-variant:small-caps;
     font-size: 25px;
     margin: 20px;
-    /* border: solid 2px  rgb(181, 172, 172); */
-    border: solid 1px rgb(197, 128, 0);
-
     border-radius: 10px;
     padding: 5px;
 
   }
 
 
+  .home:hover {
+    color: #fff; /* Cambia el color del texto en hover */
+    background-color: #007bff; /* Cambia el color de fondo en hover */
+    transition: color 0.3s, background-color 0.3s; /* Agrega una transición suave */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Agrega una sombra suave en hover */
+  }
+  
 
+ .create:hover{
+    color: #fff; /* Cambia el color del texto en hover */
+    background-color: #007bff; /* Cambia el color de fondo en hover */
+    transition: color 0.3s, background-color 0.3s; /* Agrega una transición suave */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Agrega una sombra suave en hover */
 
+ } 
 
 .barraNav {
     border-radius: 10px;
@@ -68,3 +73,14 @@
     border: solid 1px black;
 }
 
+
+.Barra{
+  position: relative;
+}
+
+.searchBar{
+  
+  z-index: 1;
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out; 
+}
