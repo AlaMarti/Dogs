@@ -12,10 +12,6 @@ const Navbar = () => {
   };
 
 
-
-
-
-
   return (
     <div className={styles.navbarCont}>
       <div className={styles.links}>
@@ -35,8 +31,8 @@ const Navbar = () => {
         </div>
 
         {searchVisible && (
-          <div className={styles.searchBar }>
-            <Searchbar></Searchbar>
+          <div className={styles.searchBar}>
+             <Searchbar></Searchbar> 
           </div>
         )}
       </div>
