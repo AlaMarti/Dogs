@@ -233,6 +233,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom"
+import styles from './searchbar.module.css'
+
+
 const Searchbar = () => {
   const [searchItem, setSearchitem] = useState('');
   const [filteredDogs, setFilteredDogs] = useState([]);
@@ -286,9 +289,9 @@ const Searchbar = () => {
         <p>No results found.</p>
       ) : (
         filteredDogs.map((dog) => (
-          <div key={dog.id}>
+          <div key={dog.id} className={styles.detalles}>
             <Link to={`/details/${dog.id}`}>
-              <p>Name: {dog.name}</p>
+              <p>{dog.name}</p>
             </Link>
           </div>
         ))
@@ -300,3 +303,5 @@ const Searchbar = () => {
 };
 
 export default Searchbar;
+
+

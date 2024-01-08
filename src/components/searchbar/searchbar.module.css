@@ -81,3 +81,12 @@
     font-size: 16px;
     text-align: start; /* Centrar el nombre */
   }
+
+  .detalles{
+    border: solid 1px black;
+  }
+
+  .detalles Link {
+    text-decoration: none;
+
+  }
