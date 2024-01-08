@@ -75,7 +75,7 @@
 //     setShowResults(false); // Ocultar la lista de resultados cuando se hace clic en un país
 //   };
 
-  
+
 //   const handleKeyDown = (event) => {
 //     if (event.key === "Escape") {
 //       setShowResults(false); // Ocultar la lista de resultados al presionar "Escape"
@@ -229,64 +229,74 @@
 
 
 
-import React, { useState } from 'react'
-import axios from "axios"
 
-
-
+import React, { useState } from 'react';
+import axios from 'axios';
+import { Link } from "react-router-dom"
 const Searchbar = () => {
-
-  const [searchItem, setSearchitem] = useState('')
-  const [searchResults, setSearchResults] = useState([]);
-
-  
+  const [searchItem, setSearchitem] = useState('');
+  const [filteredDogs, setFilteredDogs] = useState([]);
+  const [searched, setSearched] = useState(false);
 
 
-
-    const onSearch = async () => {
-      const lowercaseSearchItem = searchItem.toLowerCase();
+  const onSearch = async () => {
+    const lowercaseSearchItem = searchItem.toLowerCase();
 
 
     try {
       const response = await axios.get('http://localhost:3001/dog', {});
-
       const dogs = response.data;
-      setSearchResults(dogs)
+      setFilteredDogs(
+        dogs.filter((dog) => dog.name.toLowerCase().includes(lowercaseSearchItem))
+      );
 
-
-      const filteredDogs = dogs.filter((dog) =>
-      dog.name.toLowerCase().includes(lowercaseSearchItem)
-    );
-
-
-      console.log(dogs)
-      console.log(searchItem)
-      console.log(lowercaseSearchItem)
-      console.log(filteredDogs)
-
-   
-
+      setSearched(true);
 
 
     } catch (error) {
       console.error('An error occurred while searching for the dog:', error);
     }
 
+
   };
-  
- 
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setSearchitem(value);
+
+    // Si el campo de búsqueda está vacío, reiniciar los resultados
+    if (value === '') {
+      setFilteredDogs([]);
+      setSearched(false);
+
+    }
+  };
 
   return (
     <div>
-      <input type='text' placeholder='Search Dog' value={searchItem} onChange={(e)=> setSearchitem(e.target.value)}/>
+      <input
+        type='text'
+        placeholder='Search Dog'
+        value={searchItem}
+        onChange={handleInputChange}
+      />
       <button onClick={onSearch}> Search </button>
 
-      {searchResults.map((dog) => (
-        <div key={dog.id}>
-          <p>{dog.name}</p>
-        </div>
-      ))}
+      {searched && filteredDogs.length === 0 ? (
+        <p>No results found.</p>
+      ) : (
+        filteredDogs.map((dog) => (
+          <div key={dog.id}>
+            <Link to={`/details/${dog.id}`}>
+              <p>Name: {dog.name}</p>
+            </Link>
+          </div>
+        ))
+      )}
+
+  
     </div>
-  )
-}
-export default Searchbar
+  );
+};
+
+export default Searchbar;
