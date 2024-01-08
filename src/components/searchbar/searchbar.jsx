@@ -237,30 +237,55 @@ import axios from "axios"
 const Searchbar = () => {
 
   const [searchItem, setSearchitem] = useState('')
+  const [searchResults, setSearchResults] = useState([]);
+
+  
+
+
 
     const onSearch = async () => {
+      const lowercaseSearchItem = searchItem.toLowerCase();
+
+
     try {
-      const response = await axios.get('http://localhost:3001/dog', {
-        params: {
-          name: searchItem,
-        },
-      });
+      const response = await axios.get('http://localhost:3001/dog', {});
 
       const dogs = response.data;
+      setSearchResults(dogs)
+
+
+      const filteredDogs = dogs.filter((dog) =>
+      dog.name.toLowerCase().includes(lowercaseSearchItem)
+    );
+
 
       console.log(dogs)
+      console.log(searchItem)
+      console.log(lowercaseSearchItem)
+      console.log(filteredDogs)
+
+   
+
+
+
     } catch (error) {
       console.error('An error occurred while searching for the dog:', error);
     }
 
   };
-
-  console.log(searchItem)
+  
+ 
 
   return (
     <div>
       <input type='text' placeholder='Search Dog' value={searchItem} onChange={(e)=> setSearchitem(e.target.value)}/>
       <button onClick={onSearch}> Search </button>
+
+      {searchResults.map((dog) => (
+        <div key={dog.id}>
+          <p>{dog.name}</p>
+        </div>
+      ))}
     </div>
   )
 }
