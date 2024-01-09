@@ -1,4 +1,4 @@
-.inputSearchBar{
+/* .inputSearchBar{
     width: 300px;
     background: transparent;
     padding-top: 10px;
@@ -39,15 +39,15 @@
     left: 0;
     width: 100%;
     max-height: 120px; /* Limitando el tamaño de la lista */
-    overflow-y: auto; /* Agregando scroll cuando se excede la altura */
-    background-color: #fff;
+    /* overflow-y: auto; /* Agregando scroll cuando se excede la altura */
+    /* background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
+    z-index: 1; */
+  
 
-
+/* 
   .resultsList {
     list-style: none;
     padding: 0;
@@ -62,31 +62,35 @@
     border-bottom: 1px solid #ccc;
     cursor: pointer;
     transition: background-color 0.2s; /* Agregar una transición suave */
-  }
   
-  .resultItem:hover {
+  
+  /* .resultItem:hover {
     background-color: #507eda; /* Cambiar el color al pasar el mouse */
-  }
   
-  .flagImage {
-    width: 30px;
-    height: 20px;
-    margin-right: 10px;
-    object-fit: cover;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
   
-  .countryName {
-    font-size: 16px;
-    text-align: start; /* Centrar el nombre */
-  }
+
+  .ContenedorInput{
+    border: solid 1px red;
+    display: flex;
+    flex-direction: column;
+  }  
 
   .detalles{
     border: solid 1px black;
+    margin: 10px;
+    display: flex; 
+    justify-content: space-around;
+
   }
 
-  .detalles Link {
+  .detalles a {
     text-decoration: none;
+    padding: 5px; /* Añadido para dar espacio alrededor del texto dentro de los párrafos */
+    margin: 5px 0;
+    margin: 5px 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-variant:small-caps;
+    color: black;
+     
 
   }

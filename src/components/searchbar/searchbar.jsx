@@ -277,27 +277,34 @@ const Searchbar = () => {
 
   return (
     <div>
-      <input
-        type='text'
-        placeholder='Search Dog'
-        value={searchItem}
-        onChange={handleInputChange}
-      />
-      <button onClick={onSearch}> Search </button>
 
-      {searched && filteredDogs.length === 0 ? (
-        <p>No results found.</p>
-      ) : (
-        filteredDogs.map((dog) => (
-          <div key={dog.id} className={styles.detalles}>
-            <Link to={`/details/${dog.id}`}>
-              <p>{dog.name}</p>
-            </Link>
-          </div>
-        ))
-      )}
+      <div className={styles.ContenedorInput}>
+        <input
+          type='text'
+          placeholder='Search Dog'
+          value={searchItem}
+          onChange={handleInputChange}
+        />
+        <button onClick={onSearch}> Search </button>
 
-  
+        {searched && filteredDogs.length === 0 ? (
+          <p>No results found.</p>
+        ) : (
+          
+          filteredDogs.map((dog) => (
+            <div key={dog.id} className={styles.detalles}>
+              <Link to={`/details/${dog.id}`}>
+                <a>{dog.name}</a>
+                <div className={styles.imagen}>
+                  <img src={dog.image} alt="dog" width='3%' />
+                </div>
+
+              </Link>
+            </div>
+          ))
+        )}
+      </div>
+
     </div>
   );
 };
