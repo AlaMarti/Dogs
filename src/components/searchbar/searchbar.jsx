@@ -284,19 +284,20 @@ const Searchbar = () => {
           placeholder='Search Dog'
           value={searchItem}
           onChange={handleInputChange}
+          className={styles.Input}
         />
-        <button onClick={onSearch}> Search </button>
+        <button onClick={onSearch} className={styles.button}> Search </button>
 
         {searched && filteredDogs.length === 0 ? (
-          <p>No results found.</p>
+          <p className={styles.NoResults}>No results found.</p>
         ) : (
           
           filteredDogs.map((dog) => (
             <div key={dog.id} className={styles.detalles}>
-              <Link to={`/details/${dog.id}`}>
-                <a>{dog.name}</a>
+              <Link to={`/details/${dog.id}`} className={styles.Links}>
+                <a className={styles.DogName}>{dog.name}</a>
                 <div className={styles.imagen}>
-                  <img src={dog.image} alt="dog" width='3%' />
+                  <img src={dog.image} alt="dog" width='3%' className={styles.ImagenPerro}/>
                 </div>
 
               </Link>
