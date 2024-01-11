@@ -70,10 +70,10 @@
   
 
   .ContenedorInput{
-    flex-direction: column;
-    align-items: center;
     margin: 20px;
     margin-top: 20px;
+    
+    
   }  
 
 .Input{
@@ -104,32 +104,37 @@
 
 .Links {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   display: flex;
+  justify-content: center;
+  background-color: #4caf50;
+  border-radius: 10px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
   
 }
 
+.Links:hover {
+  background-color: #45a049; 
+}
+
 .detalles {
-  margin: auto;
-  width: 15%;
+  
+ justify-content: space-between;
+
 }
 
 .DogName {
-  font-size: 17px;
+  font-size: 20px;
   display: flex;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-variant:small-caps;
 }
 
-.imagen{
-  width: 40%;
-  justify-content: center;
 
-}
 
 .ImagenPerro {
   border-radius: 5px;
-  width: 60%;
   display: flex;
   margin-left: 5px;
 }

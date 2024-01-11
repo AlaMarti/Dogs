@@ -273,39 +273,44 @@ const Searchbar = () => {
       setSearched(false);
 
     }
+
+
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSearch();
+  }
 
   return (
     <div>
+        <div className={styles.ContenedorInput}>
+          <input
+            type='text'
+            placeholder='Search Dog'
+            value={searchItem}
+            onChange={handleInputChange}
+            className={styles.Input}
+          />
+          <button type='button' onClick={onSearch} className={styles.button}><i className="fa-solid fa-magnifying-glass"></i></button>
 
-      <div className={styles.ContenedorInput}>
-        <input
-          type='text'
-          placeholder='Search Dog'
-          value={searchItem}
-          onChange={handleInputChange}
-          className={styles.Input}
-        />
-        <button onClick={onSearch} className={styles.button}> Search </button>
+          {searched && filteredDogs.length === 0 ? (
+            <p className={styles.NoResults}>No results found.</p>
+          ) : (
 
-        {searched && filteredDogs.length === 0 ? (
-          <p className={styles.NoResults}>No results found.</p>
-        ) : (
-          
-          filteredDogs.map((dog) => (
-            <div key={dog.id} className={styles.detalles}>
-              <Link to={`/details/${dog.id}`} className={styles.Links}>
-                <a className={styles.DogName}>{dog.name}</a>
-                <div className={styles.imagen}>
-                  <img src={dog.image} alt="dog" width='3%' className={styles.ImagenPerro}/>
-                </div>
+            filteredDogs.map((dog) => (
+              <div key={dog.id} className={styles.detalles}>
+                <Link to={`/details/${dog.id}`} className={styles.Links}>
+                  <a className={styles.DogName}>{dog.name}</a>
+                  <div className={styles.imagen}>
+                    <img src={dog.image} alt="dog" height='30' className={styles.ImagenPerro} />
+                  </div>
 
-              </Link>
-            </div>
-          ))
-        )}
-      </div>
-
+                </Link>
+              </div>
+            ))
+          )}
+        </div>
     </div>
   );
 };

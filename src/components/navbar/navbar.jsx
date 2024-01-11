@@ -25,7 +25,14 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-      <div className={styles.barra}>
+      <div>
+        <Searchbar></Searchbar>
+
+      </div>
+
+
+
+      {/* <div className={styles.barra}>
         <div onClick={toggleSearch}>
           <i className="fa-solid fa-magnifying-glass"></i>
         </div>
@@ -35,7 +42,7 @@ const Navbar = () => {
              <Searchbar></Searchbar> 
           </div>
         )}
-      </div>
+      </div> */}
 
 
     </div>
