@@ -1,15 +1,25 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styles from './create.module.css'
+import { getDog } from '../../components/Redux/Action/Action'
+import { useDispatch, useSelector } from 'react-redux'
+import axios from 'axios'
 
 
-const create = () => {
+
+
+const Create = () => {
+
+  
+
+const response = axios.get("http://localhost:3001/dog")
+
+
   return (
     <div className={styles.Body}>
       <div className={styles.BodyForm}>
         <form action="" className={styles.form}>
-          <label> Nombre: </label>
+          <label> Nombre:<input type="text" name='nombre' placeholder='nombre'/></label>
 
-            <input type="text" name='nombre' placeholder='nombre'/>
 
           <label> Altura: <input type="text" name='altura' placeholder='altura minima'/><input type="text" name='altura' placeholder='altura maxima'/></label>
           <label> Peso:   <input type="text" name='peso' placeholder='Peso minimo'/><input type="text" name='peso' placeholder='peso maximo'/></label>
@@ -23,14 +33,8 @@ const create = () => {
 
           </select>
 
-          <button type='button'> Agregar </button>
+          <button type='button' className={styles.button}> Agregar </button>
           
-
-
-
-         
-          
-
 
         </form>
       </div>
@@ -38,4 +42,4 @@ const create = () => {
   )
 }
 
-export default create
+export default Create
