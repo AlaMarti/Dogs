@@ -1,4 +1,4 @@
-import { GET_DOGS, PAGINATE } from "../Action/Actions-Types"
+import { GET_DOGS, GET_RAZA, PAGINATE } from "../Action/Actions-Types"
 
 
 let initialState ={
@@ -12,6 +12,7 @@ let initialState ={
 function rootReducer(state = initialState, action ){
     let auxPage = 1;
     console.log(action.payload)
+    console.log(action.type)
     const ITEMS_PERPAGE = 8
 
     switch(action.type){
@@ -23,6 +24,10 @@ function rootReducer(state = initialState, action ){
                 allDogsBackup: action.payload,
                 numpage: auxPage
             }
+
+        case GET_RAZA:
+            return{...state, allRaza:[...action.payload]}
+
 
         case PAGINATE:
             const next_page = state.currentPage + 1;

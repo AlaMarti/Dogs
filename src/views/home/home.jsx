@@ -11,6 +11,8 @@ const Home = () => {
   const array = []
   const dispatch = useDispatch()
   const allDogs = useSelector(state => state.allDogs)
+
+  
   useEffect(() => {
     dispatch(getDog())
 
