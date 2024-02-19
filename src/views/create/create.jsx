@@ -42,20 +42,32 @@ const Create = () => {
 
 
   const validate = (form, setError, error) => {
-    if (!form.nombre) setError({ ...error, nombre: "Nombre vacio" })
-    else {
-      setError({ ...error, nombre: "" })
-    }
 
-    if (!form.alturaMin) setError({ ...error, alturaMin: "Altura vacia" })
-    else {
-      setError({ ...error, alturaMin: "" })
-    }
+    // if (!form.nombre) setError({ ...error, nombre: "Nombre vacio" })
+    // else {
+    //   setError({ ...error, nombre: "" })
+    // }
 
-    if (!form.alturaMax) setError({ ...error, alturaMax: "Altura vacia" })
-    else {
-      setError({ ...error, alturaMax: "" })
-    }
+    // if (!form.alturaMin) setError({ ...error, alturaMin: "Altura vacia" })
+    // else {
+    //   setError({ ...error, alturaMin: "" })
+    // }
+
+    // if (!form.alturaMax) setError({ ...error, alturaMax: "Altura vacia" })
+    // else {
+    //   setError({ ...error, alturaMax: "" })
+    // }
+
+    let newErrors = {}; // Objeto temporal para acumular los errores
+
+    if (!form.nombre) newErrors = { ...newErrors, nombre: "Nombre vacio" };
+    else newErrors = { ...newErrors, nombre: "" };
+  
+    if (!form.alturaMin) newErrors = { ...newErrors, alturaMin: "Altura vacia" };
+    else newErrors = { ...newErrors, alturaMin: "" };
+
+    setError({ ...error, ...newErrors });
+  
 
 
   }
